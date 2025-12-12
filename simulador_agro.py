@@ -75,7 +75,7 @@ if st.button("Calcular DRE"):
 
         st.write(f"**Produção Total:** {producao_total:,.2f} sacas")
         st.write(f"**Receita Bruta:** R$ {receita_total:,.2f}")
-        st.write(f"**Deduções de Impostos:** R$ {deducoes:,2f}")
+        st.write(f"**Deduções de Impostos:** R$ {deducoes:,.2f}")
         st.write(f"**Lucro Bruto:** R$ {lucro_bruto:,.2f}")
         st.write(f"**Lucro Operacional:** R$ {lucro_operacional:,.2f}")
         st.write(f"**Lucro Antes dos Juros:** R$ {lucro_antes_juros:,.2f}")
