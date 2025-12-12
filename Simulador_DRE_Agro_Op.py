@@ -14,6 +14,9 @@ produtividade = st.number_input("Produtividade (sacas/ha):", min_value=0.0, step
 area = st.number_input("Área Plantada (ha):", min_value=0.0, step=0.1)
 preco = st.number_input("Preço Médio de Venda (R$):", min_value=0.0, step=0.1)
 
+st.markdown("---")
+
+st.title("Custos de Produção")
 #Custos de Produção
 custo_insumos_def = st.number_input("Insumos: Defensivos Agrícolas (R$):", min_value= 0.0, step = 100.0)
 custo_insumos_fert = st.number_input("Insumos: Fertilizantes (R$):", min_value= 0.0, step = 100.0)
@@ -28,6 +31,9 @@ custo_manutencao = st.number_input("Manutenção Direta (R$):", min_value= 0.0, 
 custo_mao_de_obra = st.number_input("Mão de Obra Direta (R$):", min_value= 0.0, step = 100.0)
 custo_outros = st.number_input("Outros Custos De Produção (R$):", min_value= 0.0, step = 100.0)
 
+st.markdown("---")
+
+st.title("Despesas Não Operacionais")
 #Despesas Não Operacionais
 desp_comb = st.number_input("Combustíveis Indiretos (R$):", min_value=0.0, step=100.0)
 desp_adm = st.number_input("Despesas Administrativas (R$):", min_value=0.0, step=100.0)
@@ -53,8 +59,10 @@ if st.button("Calcular DRE"):
         producao_total = produtividade * area
         receita_total = producao_total * preco
         deducoes = receita_total * 0.03
+        receita_liquida = receita_total - deducoes
         custo_producao = custo_analises + custo_arrendamento + custo_comb + custo_comissao + custo_frete + custo_insumos_def + custo_insumos_fert + custo_insumos_sem + custo_insumos_out + custo_manutencao + custo_mao_de_obra + custo_outros
         desp_nao_op = desp_adm + desp_comb + desp_frete + desp_impostos + desp_man + desp_outros + desp_seguros + desp_terceiros
+
 
         # R$/ha
         receita_ha = receita_total / area
@@ -75,6 +83,9 @@ if st.button("Calcular DRE"):
         lucro_operacional = lucro_bruto - desp_nao_op
         lucro_antes_juros = lucro_operacional - desp_fin
         lucro_liquido = lucro_antes_juros - juros
+        margem_contribuicao = lucro_bruto / receita_liquida
+        ebitda = lucro_bruto - desp_nao_op
+        ebitda_perc = ebitda / receita_liquida
 
         st.success("Cálculo realizado com sucesso!")
 
@@ -104,8 +115,11 @@ if st.button("Calcular DRE"):
         st.write(f"**Produção Total:** {producao_total:,.2f} sacas")
         st.write(f"**Receita Bruta:** R$ {receita_total:,.2f}")
         st.write(f"**Deduções de Impostos:** R$ {deducoes:,.2f}")
+        st.write(f"**Receita Líquida:** R$ {receita_liquida:,.2f}")
         st.write(f"**Lucro Bruto:** R$ {lucro_bruto:,.2f}")
+        st.write(f"**Margem de Contribuição:** % {margem_contribuicao:,.2f}")
         st.write(f"**Lucro Operacional:** R$ {lucro_operacional:,.2f}")
+        st.write(f"**EBITDA %: {ebitda_perc:,.2f}")
         st.write(f"**Lucro Antes dos Juros:** R$ {lucro_antes_juros:,.2f}")
         st.write(f"**Lucro Líquido:** R$ {lucro_liquido:,.2f}")
 
