@@ -2,11 +2,11 @@ import streamlit as st
 
 st.set_page_config(page_title="Simulador de DRE do Agronegócio", layout="centered")
 
-st.title("🌾 Simulador de DRE do Agronegócio")
+st.title("🌾 Simulador de DRE do Agronegócio 🌾")
 
 st.markdown("""
 Preencha os campos abaixo com os valores da sua operação agrícola.
-O sistema calculará automaticamente os indicadores em **R$/ha** e **R$/saca**, além do DRE completo.
+O sistema calculará automaticamente os indicadores em *Reais/ha** e **Reais/saca**, além do DRE completo.
 """)
 
 # Entradas do usuário
@@ -26,6 +26,7 @@ if st.button("Calcular DRE"):
         # Cálculos básicos
         producao_total = produtividade * area
         receita_total = producao_total * preco
+        deducoes = receita_total * 0.3
 
         # R$/ha
         receita_ha = receita_total / area
@@ -73,7 +74,8 @@ if st.button("Calcular DRE"):
         st.header("📘 DRE Completo")
 
         st.write(f"**Produção Total:** {producao_total:,.2f} sacas")
-        st.write(f"**Receita Total:** R$ {receita_total:,.2f}")
+        st.write(f"**Receita Bruta:** R$ {receita_total:,.2f}")
+        st.write(f"**Deduções de Impostos:** R$ {deducoes:,2f}")
         st.write(f"**Lucro Bruto:** R$ {lucro_bruto:,.2f}")
         st.write(f"**Lucro Operacional:** R$ {lucro_operacional:,.2f}")
         st.write(f"**Lucro Antes dos Juros:** R$ {lucro_antes_juros:,.2f}")
