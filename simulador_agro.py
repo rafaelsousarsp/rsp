@@ -6,7 +6,7 @@ st.title("🌾 Simulador de DRE do Agronegócio 🌾")
 
 st.markdown("""
 Preencha os campos abaixo com os valores da sua operação agrícola.
-O sistema calculará automaticamente os indicadores em *Reais/ha** e **Reais/saca**, além do DRE completo.
+O sistema calculará automaticamente os indicadores em **Reais/ha** e **Reais/saca**, além do DRE completo.
 """)
 
 # Entradas do usuário
