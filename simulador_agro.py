@@ -27,6 +27,7 @@ if st.button("Calcular DRE"):
         producao_total = produtividade * area
         receita_total = producao_total * preco
         deducoes = receita_total * 0.03
+        receita_liquida = receita_total - deducoes
 
         # R$/ha
         receita_ha = receita_total / area
@@ -47,11 +48,14 @@ if st.button("Calcular DRE"):
         lucro_operacional = lucro_bruto - desp_nao_op
         lucro_antes_juros = lucro_operacional - desp_fin
         lucro_liquido = lucro_antes_juros - juros
+        margem_contribuicao = (lucro_bruto / receita_liquida) * 100
+        ebitda = lucro_bruto - desp_nao_op
+        ebitda_perc = (ebitda / receita_liquida) * 100
 
         st.success("Cálculo realizado com sucesso!")
 
         # Resultados
-        st.header("📊 Resultados do DRE")
+        st.header("📘 Resultados do DRE 📘")
 
         col1, col2 = st.columns(2)
 
@@ -71,13 +75,17 @@ if st.button("Calcular DRE"):
             st.write(f"**Despesas Financeiras/saca:** R$ {desp_fin_saca:,.2f}")
             st.write(f"**Juros/saca:** R$ {juros_saca:,.2f}")
 
-        st.header("📘 DRE Completo")
+        st.header("📘 DRE Completo 📘")
 
         st.write(f"**Produção Total:** {producao_total:,.2f} sacas")
         st.write(f"**Receita Bruta:** R$ {receita_total:,.2f}")
         st.write(f"**Deduções de Impostos:** R$ {deducoes:,.2f}")
+        st.write(f"**Receita Líquida:** R$ {receita_liquida:,.2f}")
+        st.write(f"**Custo de Produção:** R$ {custo_producao:,.2f}")
         st.write(f"**Lucro Bruto:** R$ {lucro_bruto:,.2f}")
+        st.write(f"**Margem de Contribuição:** % {margem_contribuicao:,.2f}")
         st.write(f"**Lucro Operacional:** R$ {lucro_operacional:,.2f}")
+        st.write(f"**EBITDA %:** {ebitda_perc:,.2f}")
         st.write(f"**Lucro Antes dos Juros:** R$ {lucro_antes_juros:,.2f}")
         st.write(f"**Lucro Líquido:** R$ {lucro_liquido:,.2f}")
 
