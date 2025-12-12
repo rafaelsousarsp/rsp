@@ -116,6 +116,7 @@ if st.button("Calcular DRE"):
         st.write(f"**Receita Bruta:** R$ {receita_total:,.2f}")
         st.write(f"**Deduções de Impostos:** R$ {deducoes:,.2f}")
         st.write(f"**Receita Líquida:** R$ {receita_liquida:,.2f}")
+        st.write(f"**Custo de Produção:* R$ {custo_producao:,.2f}")
         st.write(f"**Lucro Bruto:** R$ {lucro_bruto:,.2f}")
         st.write(f"**Margem de Contribuição:** % {margem_contribuicao:,.2f}")
         st.write(f"**Lucro Operacional:** R$ {lucro_operacional:,.2f}")
@@ -125,5 +126,4 @@ if st.button("Calcular DRE"):
 
         st.markdown("---")
         st.caption("Simulador desenvolvido por RSP · Agronegócio & Finanças")
-
 
