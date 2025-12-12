@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Simulador de DRE do Agronegócio", layout="centered")
 
-st.title("🌾 Simulador de DRE do Agronegócio")
+st.title("🌾 Simulador de DRE 🌾")
 
 st.markdown("""
 Preencha os campos abaixo com os valores da sua operação agrícola.
@@ -125,3 +125,4 @@ if st.button("Calcular DRE"):
 
         st.markdown("---")
         st.caption("Simulador desenvolvido por RSP · Agronegócio & Finanças")
+
