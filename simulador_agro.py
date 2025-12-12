@@ -55,7 +55,7 @@ if st.button("Calcular DRE"):
         st.success("Cálculo realizado com sucesso!")
 
         # Resultados
-        st.header("📘 Resultados do DRE 📘")
+        st.header("📊 Resultados do DRE 📊")
 
         col1, col2 = st.columns(2)
 
