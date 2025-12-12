@@ -16,7 +16,7 @@ preco = st.number_input("Preço Médio de Venda (R$):", min_value=0.0, step=0.1)
 
 st.markdown("---")
 
-st.title("Custos de Produção")
+st.title("📉 Custos de Produção 📉")
 #Custos de Produção
 custo_insumos_def = st.number_input("Insumos: Defensivos Agrícolas (R$):", min_value= 0.0, step = 100.0)
 custo_insumos_fert = st.number_input("Insumos: Fertilizantes (R$):", min_value= 0.0, step = 100.0)
@@ -33,7 +33,7 @@ custo_outros = st.number_input("Outros Custos De Produção (R$):", min_value= 0
 
 st.markdown("---")
 
-st.title("Despesas Não Operacionais")
+st.title("📉 Despesas Não Operacionais 📉")
 #Despesas Não Operacionais
 desp_comb = st.number_input("Combustíveis Indiretos (R$):", min_value=0.0, step=100.0)
 desp_adm = st.number_input("Despesas Administrativas (R$):", min_value=0.0, step=100.0)
@@ -83,14 +83,14 @@ if st.button("Calcular DRE"):
         lucro_operacional = lucro_bruto - desp_nao_op
         lucro_antes_juros = lucro_operacional - desp_fin
         lucro_liquido = lucro_antes_juros - juros
-        margem_contribuicao = lucro_bruto / receita_liquida
+        margem_contribuicao = (lucro_bruto / receita_liquida) * 100
         ebitda = lucro_bruto - desp_nao_op
-        ebitda_perc = ebitda / receita_liquida
+        ebitda_perc = (ebitda / receita_liquida) * 100
 
         st.success("Cálculo realizado com sucesso!")
 
         # Resultados
-        st.header("📊 Resultados do DRE")
+        st.header("📊 Resultados do DRE 📊")
 
         col1, col2 = st.columns(2)
 
@@ -110,7 +110,7 @@ if st.button("Calcular DRE"):
             st.write(f"**Despesas Financeiras/saca:** R$ {desp_fin_saca:,.2f}")
             st.write(f"**Juros/saca:** R$ {juros_saca:,.2f}")
 
-        st.header("📘 DRE Completo")
+        st.header("📘 DRE Completo 📘")
 
         st.write(f"**Produção Total:** {producao_total:,.2f} sacas")
         st.write(f"**Receita Bruta:** R$ {receita_total:,.2f}")
@@ -119,10 +119,11 @@ if st.button("Calcular DRE"):
         st.write(f"**Lucro Bruto:** R$ {lucro_bruto:,.2f}")
         st.write(f"**Margem de Contribuição:** % {margem_contribuicao:,.2f}")
         st.write(f"**Lucro Operacional:** R$ {lucro_operacional:,.2f}")
-        st.write(f"**EBITDA %: {ebitda_perc:,.2f}")
+        st.write(f"**EBITDA %:** {ebitda_perc:,.2f}")
         st.write(f"**Lucro Antes dos Juros:** R$ {lucro_antes_juros:,.2f}")
         st.write(f"**Lucro Líquido:** R$ {lucro_liquido:,.2f}")
 
         st.markdown("---")
         st.caption("Simulador desenvolvido por RSP · Agronegócio & Finanças")
+
 
