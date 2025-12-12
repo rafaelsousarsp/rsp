@@ -26,7 +26,7 @@ if st.button("Calcular DRE"):
         # Cálculos básicos
         producao_total = produtividade * area
         receita_total = producao_total * preco
-        deducoes = receita_total * 0.3
+        deducoes = receita_total * 0.03
 
         # R$/ha
         receita_ha = receita_total / area
