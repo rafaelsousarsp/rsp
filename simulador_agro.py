@@ -66,7 +66,6 @@ if st.button("Calcular DRE"):
 
         with col1:
             st.subheader("R$/ha")
-            st.write(f"**Receita/ha:** R$ {receita_ha:,.2f}")
             st.write(f"**Receita/ha:** R$ {br(receita_ha)}")
             st.write(f"**Custo de Produção/ha:** R$ {br(custo_ha)}")
             st.write(f"**Despesas Não Operacionais/ha:** R$ {br(desp_no_ha)}")
