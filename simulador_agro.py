@@ -18,7 +18,7 @@ preco = st.sidebar.slider("Preço Médio de Venda (R$):", 0.0, 200.0, 0.0, step=
 custo_producao = st.sidebar.slider("Custo de Produção Total (R$):", 0.0, 100000000.0, 0.0, step=100.0)
 desp_nao_op = st.sidebar.slider("Despesas Não Operacionais (R$):", 0.0, 100000000.0, 0.0, step=100.0)
 desp_fin = st.sidebar.slider("Despesas Financeiras (R$):", 0.0, 10000000.0, 0.0, step=100.0)
-juros = st.sidebar.slider("Juros Totais (R$):", 0.0, 100000000.0, 0.0, step=100.0)
+juros = st.sidebar.slider("Juros Totais (R$):", 0.0, 10000000.0, 0.0, step=100.0)
 
 # Botão para calcular
 if st.button("Calcular DRE"):
