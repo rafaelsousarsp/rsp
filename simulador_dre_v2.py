@@ -116,6 +116,9 @@ if st.button("📊 Calcular Cenário"):
         # ==================================================
         dre_df = pd.DataFrame({
             "Descrição": [
+                "Produtividade (sc/ha)",
+                "Área Produzida",
+                "Preço Médio de Venda",
                 "Produção Total (sc)",
                 "Receita Bruta",
                 "Deduções",
@@ -129,6 +132,9 @@ if st.button("📊 Calcular Cenário"):
                 "Lucro Líquido"
             ],
             "Valor (R$)": [
+                produtividade,
+                area,
+                preco,
                 producao_total,
                 receita_total,
                 deducoes,
