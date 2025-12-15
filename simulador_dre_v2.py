@@ -26,6 +26,7 @@ ajuste_custo = st.sidebar.slider("Variação de Custos (%)", -30, 30, 0)
 preco_aj = preco * (1 + ajuste_preco / 100)
 prod_aj = produtividade * (1 + ajuste_prod / 100)
 
+
 # CUSTOS DE PRODUÇÃO
 st.subheader("📉 Custos de Produção")
 
@@ -132,9 +133,9 @@ if st.button("📊 Calcular Cenário"):
                 "Lucro Líquido"
             ],
             "Valor (R$)": [
-                produtividade,
+                prod_aj,
                 area,
-                preco,
+                preco_aj,
                 producao_total,
                 receita_total,
                 deducoes,
