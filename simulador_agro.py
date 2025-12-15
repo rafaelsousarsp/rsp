@@ -3,7 +3,6 @@ import streamlit as st
 def br(valor):
     return f"{valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
-
 st.set_page_config(page_title="Simulador de DRE do Agronegócio", layout="centered")
 
 st.title("🌾 Simulador de DRE do Agronegócio 🌾")
@@ -68,32 +67,33 @@ if st.button("Calcular DRE"):
         with col1:
             st.subheader("R$/ha")
             st.write(f"**Receita/ha:** R$ {receita_ha:,.2f}")
-            st.write(f"**Custo de Produção/ha:** R$ {custo_ha:,.2f}")
-            st.write(f"**Despesas Não Operacionais/ha:** R$ {desp_no_ha:,.2f}")
-            st.write(f"**Despesas Financeiras/ha:** R$ {desp_fin_ha:,.2f}")
-            st.write(f"**Juros/ha:** R$ {juros_ha:,.2f}")
+            st.write(f"**Receita/ha:** R$ {br(receita_ha)}")
+            st.write(f"**Custo de Produção/ha:** R$ {br(custo_ha)}")
+            st.write(f"**Despesas Não Operacionais/ha:** R$ {br(desp_no_ha)}")
+            st.write(f"**Despesas Financeiras/ha:** R$ {br(desp_fin_ha)}")
+            st.write(f"**Juros/ha:** R$ {br(juros_ha)}")
 
         with col2:
             st.subheader("R$/saca")
-            st.write(f"**Receita/saca:** R$ {receita_saca:,.2f}")
-            st.write(f"**Custo/saca:** R$ {custo_saca:,.2f}")
-            st.write(f"**Despesas Não Operacionais/saca:** R$ {desp_no_saca:,.2f}")
-            st.write(f"**Despesas Financeiras/saca:** R$ {desp_fin_saca:,.2f}")
-            st.write(f"**Juros/saca:** R$ {juros_saca:,.2f}")
+            st.write(f"**Receita/saca:** R$ {br(receita_saca)}")
+            st.write(f"**Custo/saca:** R$ {br(custo_saca)}")
+            st.write(f"**Despesas Não Operacionais/saca:** R$ {br(desp_no_saca)}")
+            st.write(f"**Despesas Financeiras/saca:** R$ {br(desp_fin_saca)}")
+            st.write(f"**Juros/saca:** R$ {br(juros_saca)}")
 
         st.header("📘 DRE Completo 📘")
 
-        st.write(f"**Produção Total:** {producao_total:,.2f} sacas")
-        st.write(f"**Receita Bruta:** R$ {receita_total:,.2f}")
-        st.write(f"**Deduções de Impostos:** R$ {deducoes:,.2f}")
-        st.write(f"**Receita Líquida:** R$ {receita_liquida:,.2f}")
-        st.write(f"**Custo de Produção:** R$ {custo_producao:,.2f}")
-        st.write(f"**Lucro Bruto:** R$ {lucro_bruto:,.2f}")
-        st.write(f"**Margem de Contribuição:** % {margem_contribuicao:,.2f}")
-        st.write(f"**Lucro Operacional:** R$ {lucro_operacional:,.2f}")
-        st.write(f"**EBITDA %:** {ebitda_perc:,.2f}")
-        st.write(f"**Lucro Antes dos Juros:** R$ {lucro_antes_juros:,.2f}")
-        st.write(f"**Lucro Líquido:** R$ {lucro_liquido:,.2f}")
+        st.write(f"**Produção Total:** {br(producao_total)} sacas")
+        st.write(f"**Receita Bruta:** R$ {br(receita_total)}")
+        st.write(f"**Deduções de Impostos:** R$ {br(deducoes)}")
+        st.write(f"**Receita Líquida:** R$ {br(receita_liquida)}")
+        st.write(f"**Custo de Produção:** R$ {br(custo_producao)}")
+        st.write(f"**Lucro Bruto:** R$ {br(lucro_bruto)}")
+        st.write(f"**Margem de Contribuição:** {br(margem_contribuicao)} %")
+        st.write(f"**Lucro Operacional:** R$ {br(lucro_operacional)}")
+        st.write(f"**EBITDA %:** {br(ebitda_perc)} %")
+        st.write(f"**Lucro Antes dos Juros:** R$ {br(lucro_antes_juros)}")
+        st.write(f"**Lucro Líquido:** R$ {br(lucro_liquido)}")
 
         st.markdown("---")
         st.caption("Simulador desenvolvido por RSP · Agronegócio & Finanças")
