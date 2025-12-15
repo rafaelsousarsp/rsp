@@ -10,13 +10,13 @@ O sistema calculará automaticamente os indicadores em **Reais/ha** e **Reais/sa
 """)
 
 # Entradas do usuário
-produtividade = st.sidebar.slider ("Produtividade (sacas/ha):", 0.0, 200.0, 0.0 )
-area = st.sidebar.slider ("Área Plantada (ha):", 0.0, 20000.0, 0)
-preco = st.sidebar.slider("Preço Médio de Venda (R$):", 0.0, 200.0, 0.0)
-custo_producao = st.sidebar.slider("Custo de Produção Total (R$):", 0.0, 100000000.0, 0.0)
-desp_nao_op = st.sidebar.slider("Despesas Não Operacionais (R$):", 0.0, 100000000.0, 0.0)
-desp_fin = st.sidebar.slider("Despesas Financeiras (R$):", 0.0, 10000000.0, 0.0)
-juros = st.sidebar.slider("Juros Totais (R$):", 0.0, 100000000.0, 0.0)
+produtividade = st.sidebar.slider ("Produtividade (sacas/ha):", 0.0, 200.0, 0.0, step =0.1 )
+area = st.sidebar.slider ("Área Plantada (ha):", 0.0, 20000.0, 0, step=0.1)
+preco = st.sidebar.slider("Preço Médio de Venda (R$):", 0.0, 200.0, 0.0, step=0.1)
+custo_producao = st.sidebar.slider("Custo de Produção Total (R$):", 0.0, 100000000.0, 0.0, step=100)
+desp_nao_op = st.sidebar.slider("Despesas Não Operacionais (R$):", 0.0, 100000000.0, 0.0, step=100)
+desp_fin = st.sidebar.slider("Despesas Financeiras (R$):", 0.0, 10000000.0, 0.0, step=100)
+juros = st.sidebar.slider("Juros Totais (R$):", 0.0, 100000000.0, 0.0, step=100)
 
 # Botão para calcular
 if st.button("Calcular DRE"):
