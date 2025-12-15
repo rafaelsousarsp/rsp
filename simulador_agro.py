@@ -9,6 +9,8 @@ Preencha os campos abaixo com os valores da sua operação agrícola.
 O sistema calculará automaticamente os indicadores em **Reais/ha** e **Reais/saca**, além do DRE completo.
 """)
 
+st.sidebar.header("🎯 Simulador")
+
 # Entradas do usuário
 produtividade = st.sidebar.slider ("Produtividade (sacas/ha):", 0.0, 200.0, 0.0, step =0.1 )
 area = st.sidebar.slider ("Área Plantada (ha):", 0.0, 20000.0, 0.0, step=0.1)
