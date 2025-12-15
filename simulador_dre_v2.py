@@ -158,17 +158,17 @@ if st.button("📊 Calcular Cenário"):
         # ==================================================
         # EXPORTAÇÃO PROFISSIONAL PARA EXCEL
         # ==================================================
-    buffer = BytesIO()
-with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
-    dre_df.to_excel(writer, index=False, sheet_name="DRE")
-    por_ha_df.to_excel(writer, index=False, sheet_name="Indicadores_ha")
-    por_saca_df.to_excel(writer, index=False, sheet_name="Indicadores_saca")
+        buffer = BytesIO()
+        with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
+            dre_df.to_excel(writer, index=False, sheet_name="DRE")
+            por_ha_df.to_excel(writer, index=False, sheet_name="Indicadores_ha")
+            por_saca_df.to_excel(writer, index=False, sheet_name="Indicadores_saca")
 
-st.download_button(
-    "📥 Exportar Análise Completa (Excel)",
-    buffer.getvalue(),
-    file_name="simulador_dre_profissional_rsp.xlsx",
-    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-)
+        st.download_button(
+            "📥 Exportar Análise Completa (Excel)",
+            buffer.getvalue(),
+            file_name="simulador_dre_profissional_rsp.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        )
 
         st.caption("Simulador Profissional • RSP | Finanças & Agronegócio")
