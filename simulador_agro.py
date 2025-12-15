@@ -1,5 +1,9 @@
 import streamlit as st
 
+def br(valor):
+    return f"{valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
 st.set_page_config(page_title="Simulador de DRE do Agronegócio", layout="centered")
 
 st.title("🌾 Simulador de DRE do Agronegócio 🌾")
