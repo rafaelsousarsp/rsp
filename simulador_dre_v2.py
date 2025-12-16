@@ -14,9 +14,9 @@ st.caption("Análise financeira, cenários e indicadores estratégicos")
 # SIDEBAR — SIMULADOR DE CENÁRIOS
 st.sidebar.header("🎯 Indicadores")
 
-produtividade = st.sidebar.number_input("Produtividade (sc/ha)", 0.0, step=1.0)
+produtividade = st.sidebar.number_input("Produtividade (sc/ha)", 0.0, step=0.1)
 area = st.sidebar.number_input("Área Plantada (ha)", 0.0, step=1.0)
-preco = st.sidebar.number_input("Preço Médio (R$/sc)", 0.0, step=1.0)
+preco = st.sidebar.number_input("Preço Médio (R$/sc)", 0.0, step=0.1)
 
 ajuste_preco = st.sidebar.slider("Variação de Preço (%)", -30, 30, 0)
 ajuste_prod = st.sidebar.slider("Variação de Produtividade (%)", -30, 30, 0)
