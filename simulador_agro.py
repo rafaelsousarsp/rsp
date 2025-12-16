@@ -15,9 +15,9 @@ O sistema calculará automaticamente os indicadores em **Reais/ha** e **Reais/sa
 st.sidebar.header("🎯 Simulador")
 
 # Entradas do usuário
-produtividade = st.sidebar.slider ("Produtividade (sacas/ha):", 0.0, 200.0, 0.0, step =0.1 )
-area = st.sidebar.slider ("Área Plantada (ha):", 0.0, 20000.0, 0.0, step=0.1)
-preco = st.sidebar.slider("Preço Médio de Venda (R$):", 0.0, 200.0, 0.0, step=0.1)
+produtividade = st.sidebar.slider ("Produtividade (sacas/ha):", 0.0, 200.0, 0.0, step =0.01 )
+area = st.sidebar.slider ("Área Plantada (ha):", 0.0, 20000.0, 0.0, step=0.01)
+preco = st.sidebar.slider("Preço Médio de Venda (R$):", 0.0, 200.0, 0.0, step=0.01)
 custo_producao = st.sidebar.slider("Custo de Produção Total (R$):", 0.0, 100000000.0, 0.0, step=100.0)
 desp_nao_op = st.sidebar.slider("Despesas Não Operacionais (R$):", 0.0, 100000000.0, 0.0, step=100.0)
 desp_fin = st.sidebar.slider("Despesas Financeiras (R$):", 0.0, 10000000.0, 0.0, step=100.0)
